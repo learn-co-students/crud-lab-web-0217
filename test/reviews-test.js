@@ -95,7 +95,7 @@ describe('Reviews Component', () => {
         { id: 1, text: 'hello' },
         { id: 2, text: 'goodbye' },
         { id: 3, text: 'ciao' }
-      ], 
+      ],
       reviews: [
         { id: 1, restaurantId: 1, text: 'it was good' },
         { id: 2, restaurantId: 1, text: 'it was good' }
@@ -114,11 +114,11 @@ describe('Reviews Component', () => {
         { id: 1, text: 'hello' },
         { id: 2, text: 'goodbye' },
         { id: 3, text: 'ciao' }
-      ], 
+      ],
       reviews: [
         { id: 1, restaurantId: 1, text: 'it was good' },
         { id: 2, restaurantId: 1, text: 'it was very good' },
-        { id: 2, restaurantId: 2, text: 'it was very bad' }
+        { id: 3, restaurantId: 2, text: 'it was very bad' }
       ]
     });
     let restaurantId = 1;
@@ -162,7 +162,7 @@ describe('Reviews Component', () => {
     form.simulate('submit',  { preventDefault() {} });
     input.simulate('change', { target: { value: 'ciao' } });
     form.simulate('submit',  { preventDefault() {} });
-    
+
     let review = store.getState().reviews[1];
     const ReviewComponent = shallow(<Review store={store} review={review} />)
     let deleteButton = ReviewComponent.find('button').first();
