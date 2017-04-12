@@ -93,7 +93,7 @@ describe('Restaurant Component with Redux', () => {
     sinon.stub(store, 'getState').returns({
       restaurants: [
         {id: 1, text: 'hello'},
-        {id: 2, text: 'goodbye'}, 
+        {id: 2, text: 'goodbye'},
         {id: 3, text: 'ciao'}
       ]
     });
