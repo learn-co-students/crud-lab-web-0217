@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
+import Restaurant from './Restaurant'
 
 class Restaurants extends Component {
   render() {
     return(
       <ul>
-        Restaurants Component
+        {this.props.store.getState().restaurants.map((rest)=>{
+          return <Restaurant
+                    store={this.props.store}
+                    restaurant={rest}
+                  />
+        })}
       </ul>
     );
   }
