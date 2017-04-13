@@ -142,7 +142,7 @@ describe('Reviews Component', () => {
     expect(new Set(ids).size === ids.length).to.equal(true);
   });
 
-  it('has a button that dispatches a DELETE_RESTAURANT action with the proper id when clicked', ()=> {
+  it('has a button that dispatches a DELETE_REVIEW action with the proper id when clicked', ()=> {
     const store = createStore(manageRestaurant);
     const review = { id: 1, text: 'hello' };
     const wrapper = shallow(<Review store={store} review={review} />);
