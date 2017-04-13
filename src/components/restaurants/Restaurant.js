@@ -12,7 +12,7 @@ class Restaurant extends Component {
     return (
       <li>
         {this.props.restaurant.text}
-        <button onClick={(event) => {this.handleOnClick(event)}}>hello</button>
+        <button onClick={(event) => {this.handleOnClick(event)}}>delete</button>
         <ReviewInput store={this.props.store} restaurantId={this.props.restaurant.id} />
       </li>
     );

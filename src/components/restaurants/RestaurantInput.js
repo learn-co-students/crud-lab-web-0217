@@ -7,6 +7,8 @@ class RestaurantInput extends Component {
     this.state = {
       text: '',
     }
+    this.handleOnChange = this.handleOnChange.bind(this)
+  this.handleOnSubmit = this.handleOnSubmit.bind(this)
   }
 
   handleOnChange(event) {
