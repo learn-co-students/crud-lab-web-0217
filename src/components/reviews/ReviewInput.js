@@ -34,6 +34,7 @@ class ReviewInput extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleSubmit(event)}>
+          <label><h3>WHAT'D YOU THINK OF THE PLACE?</h3></label>
           <input type='text'
                  value={this.state.text}
                  onChange={(event) => this.handleChange(event)}
@@ -43,6 +44,7 @@ class ReviewInput extends Component {
         <Reviews store={this.props.store}
                  restaurantId={this.props.restaurantId}
                  />
+        <br></br>
       </div>
     );
   }
