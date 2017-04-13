@@ -25,6 +25,7 @@ describe('RestaurantInput', () => {
   it('has changes the state on a keydown', () => {
     const wrapper = shallow(<RestaurantInput />);
     expect(wrapper.state('text')).to.equal('');
+
     let input = wrapper.find('input').first();
     input.simulate('change', { target: { value: 'Hello' } });
     expect(wrapper.state('text')).to.equal('Hello');
@@ -46,9 +47,14 @@ describe('RestaurantInput', () => {
 describe('Restaurants Component', () => {
   it('displays a list of restaurant components', () => {
     const store = createStore(manageRestaurant)
-    sinon.stub(store, 'getState').returns({restaurants: [{id: 1, text: 'hello'},
-      {id: 2, text: 'goodbye'}, {id: 3, text: 'ciao'}
-      ]});
+    sinon.stub(store, 'getState').returns({
+      restaurants: [
+        {id: 1, text: 'hello'},
+        {id: 2, text: 'goodbye'},
+        {id: 3, text: 'ciao'}
+      ],
+    reviews: []
+    });
     const wrapper = shallow(<Restaurants store={store}/>)
     expect(wrapper.find(Restaurant)).to.have.length(3);
   });
@@ -93,9 +99,10 @@ describe('Restaurant Component with Redux', () => {
     sinon.stub(store, 'getState').returns({
       restaurants: [
         {id: 1, text: 'hello'},
-        {id: 2, text: 'goodbye'}, 
+        {id: 2, text: 'goodbye'},
         {id: 3, text: 'ciao'}
-      ]
+      ] ,
+      reviews: []
     });
     const wrapper = shallow(<Restaurants store={store} />);
     expect(wrapper.find({ restaurant: { id: 1, text: 'hello' }})).to.have.length(1);
